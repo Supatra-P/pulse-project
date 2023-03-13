@@ -1,0 +1,44 @@
+#trending {
+    padding: 0 140px;
+    color: white;
+}
+
+.trend-item{
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.pic-box {
+    background-color: #D9D9D9;
+    width: 360px;
+    height: 200px;
+}
+
+.description-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.description-box p:nth-child(2){
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.description-box p:nth-child(3){
+    font-size: 16px;
+}
+
+.description-box p:nth-child(4){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+}
