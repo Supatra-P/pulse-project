@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState, Dispatch, SetStateAction, FC } from 'react';
 import './StylesSearch.css';
 import { FaSearch } from 'react-icons/fa';
-import { json } from 'react-router-dom';
 import axios from 'axios';
 
 export interface Respse {
@@ -17,33 +16,18 @@ export interface ISetResults {
   setResults: Dispatch<SetStateAction<Respse[]>>;
 }
 
-export const Searchbar: FC<ISetResults> = (setResults: ISetResults) => {
+export const Searchbar: FC<ISetResults> = (setResults) => {
   const [input, setInput] = useState<string>("");
-  const resultsName: any[] = [];
 
   const fetchData = (value: string) => {
     axios.get("http://jsonplaceholder.typicode.com/users")
       .then((res) => {
-        // res.data.map((element: Respse) => (
-        //   console.log(element.name)
-        // ));
-        console.log(res.data);
+        // console.log(res.data);
         const results: Respse[] = res.data.filter((user: Respse) => {
           return value && user && user.name && user.name.toLowerCase().includes(value)
         });
-        console.log(results);
-        // results.map((result: Respse, id: number) => {
-          // return <div key={id}>{result}</div>
-          // console.log(result.name);
-          // resultsName.push(result);
-        // })
+        // console.log(results);
         setResults.setResults(results);
-        // {resultsName.forEach((e: Respse, id: number ) => {
-          // console.log(`resultsName`+e.name);
-            // console.log(`resultsName`+e.name);
-            // setResults.setResults(e);
-        // })}
-        // setResults.setResults(resultsName);
       })
   }
 
@@ -53,7 +37,7 @@ export const Searchbar: FC<ISetResults> = (setResults: ISetResults) => {
   }
   return (
     <div className='input-wrapper'>
-      <FaSearch id='search-icon' />
+      <FaSearch id='search-icon' size={28} />
       <input
         placeholder='Search...'
         value={input}

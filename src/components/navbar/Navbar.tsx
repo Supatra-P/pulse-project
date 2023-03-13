@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './StylesNav.css';
 import { Respse, Searchbar } from './searchbar/Searchbar';
-import { SearchbarResult } from './searchbar/SearchbarResult';
+import { SearchbarResultList } from './searchbar/SearchbarResultList';
 
 export interface INavbarProps {
-    // setResults: Dispatch<SetStateAction<>>;
+
 }
 
 export function Navbar() {
-    const [results, setResults] = useState<Respse[]>([]);
+    const [results, setResults] = useState<any[]>([]);
 
     return (
         <div>
@@ -19,9 +19,7 @@ export function Navbar() {
                     <h1>Pulse</h1>
                     <div className='search-bar-container'>
                         <Searchbar setResults={setResults} results={results} />
-                        <SearchbarResult results={results} setResults={function (value: React.SetStateAction<Respse[]>): void {
-                            throw new Error('Function not implemented.');
-                        } } />
+                        <SearchbarResultList results={results} setResults={setResults}/>
                     </div>
                 </div>
                 <ul>
