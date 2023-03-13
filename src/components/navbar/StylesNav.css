@@ -1,0 +1,28 @@
+nav a {
+    color: var(--txt);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+nav a:hover {
+    color: var(--txtHover);
+}
+
+nav a.action {
+    color: var(--txtHover);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav {
+    color: var(--txt);
+    background-color: var(--bgNav);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
