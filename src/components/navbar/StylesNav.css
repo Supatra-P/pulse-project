@@ -21,8 +21,13 @@ nav ul {
 
 nav {
     color: var(--txt);
+    padding: 1rem 3rem;
     background-color: var(--bgNav);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.search-bar-container {
+    /* background-color: cornflowerblue; */
 }
