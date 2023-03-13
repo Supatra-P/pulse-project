@@ -1,6 +1,7 @@
 #compare {
     color: var(--txt);
     /* padding: 0 195px; */
+    padding: 200px 0;
 }
 
 .compare-item {

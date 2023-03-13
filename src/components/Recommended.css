@@ -1,6 +1,7 @@
 #recommended {
     color: var(--txt);
     padding: 0 140px;
+    padding-top: 200px;
 }
 
 .recommend-container {
