@@ -16,3 +16,7 @@
   font-family: 'Inter';
   font-weight: 500;
 }
+
+body {
+  background-color: var(--bg);
+}
