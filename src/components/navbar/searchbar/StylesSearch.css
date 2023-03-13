@@ -1,3 +1,5 @@
+/* ----- search bar input ----- */
+
 .input-wrapper {
     color: var(--black);
     /* background-color: var(--white); */
@@ -33,7 +35,15 @@ input::placeholder {
     padding: 0 .5rem;
 }
 
+/* ----- search bar result ----- */
+
 .search-bar-result {
-    color: blueviolet;
+    color: white;
     position: absolute;
+    background-color: var(--test);
+    width: 300px;
+    margin-top: 5rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+    max-height: 300px;
+    overflow-y: scroll;
 }
