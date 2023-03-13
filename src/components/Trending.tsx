@@ -7,7 +7,7 @@ export interface ITrendingProps {
 export function Trending (props: ITrendingProps) {
   return (
     <div id='trending'>
-      <p className='title'>Trending</p>
+      <p className='title' style={{marginTop: '60px'}}>Trending</p>
       <div className='trend-item'>
         <div className='pic-box'></div>
         <div className='description-box'>
