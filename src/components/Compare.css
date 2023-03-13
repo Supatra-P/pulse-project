@@ -1,0 +1,46 @@
+#compare {
+    color: var(--txt);
+    /* padding: 0 195px; */
+}
+
+.compare-item {
+    max-width: 520px;
+}
+
+.compare-container {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    padding-bottom: 50px;
+}
+
+.compare-pic-box {
+    background-color: #D9D9D9;
+    width: 520px;
+    height: 280px;
+    margin-bottom: 20px;
+}
+
+.compare-description-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.compare-description-box p:nth-child(2){
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.compare-description-box p:nth-child(3){
+    font-size: 16px;
+}
+
+.compare-description-box p:nth-child(4){
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+}
