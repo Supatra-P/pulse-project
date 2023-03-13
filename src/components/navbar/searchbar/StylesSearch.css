@@ -19,6 +19,12 @@ input {
 input:focus {
     outline: none;
 }
+
+#search-icon {
+    color: var(--red);
+    padding: 0 .5rem;
+}
+
 .search-bar-result {
     color: blueviolet;
 }

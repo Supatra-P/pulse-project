@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './StylesSearch.css';
-import { GrFormSearch } from 'react-icons/gr';
+import { FaSearch } from 'react-icons/fa';
 
 export interface ISearchbarProps {
 }
@@ -8,7 +8,7 @@ export interface ISearchbarProps {
 export function Searchbar (props: ISearchbarProps) {
   return (
     <div className='input-wrapper'>
-        <GrFormSearch id="search-icon" size={24}/>
+        <FaSearch id='search-icon' />
         <input placeholder='Search...' />
     </div>
   );

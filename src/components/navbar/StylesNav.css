@@ -22,12 +22,11 @@ nav ul {
 nav {
     color: var(--txt);
     padding: 1rem 3rem;
-    background-color: var(--bgNav);
+    background-color: var(--red);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.search-bar-container {
-    /* background-color: cornflowerblue; */
-}
+/* .search-bar-container {
+} */
