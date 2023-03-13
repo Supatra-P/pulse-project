@@ -11,10 +11,12 @@ export function Navbar(props: INavbarProps) {
     return (
         <div>
             <nav>
-                <h1>Pulse</h1>
-                <div className='search-bar-container'>
-                    <Searchbar />
-                    {/* <SearchbarResult /> */}
+                <div className='logo-search'>
+                    <h1>Pulse</h1>
+                    <div className='search-bar-container'>
+                        <Searchbar />
+                        <SearchbarResult />
+                    </div>
                 </div>
                 <ul>
                     <li>

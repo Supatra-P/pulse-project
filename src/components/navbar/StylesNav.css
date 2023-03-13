@@ -21,11 +21,16 @@ nav ul {
 
 nav {
     color: var(--txt);
-    padding: 1rem 3rem;
+    padding: 1rem 8rem;
     background-color: var(--red);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo-search {
+    display: flex;
+    gap: 3rem;
 }
 
 /* .search-bar-container {

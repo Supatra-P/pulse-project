@@ -7,7 +7,8 @@ export interface ISearchbarResultProps {
 export function SearchbarResult (props: ISearchbarResultProps) {
   return (
     <div className='search-bar-result'>
-      search result
+      <p>dsfsdf</p>
+      <p>dsfsdfs</p>
     </div>
   );
 }
