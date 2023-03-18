@@ -9,7 +9,7 @@ export interface Respse {
   name: string;
 }
 
-export interface Respse extends Array<Respse> { }
+// export interface Respse extends Array<Respse> { }
 
 export interface ISetResults {
   results: Respse[];

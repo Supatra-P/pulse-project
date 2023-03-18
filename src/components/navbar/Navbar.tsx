@@ -10,7 +10,7 @@ export interface INavbarProps {
 }
 
 export function Navbar() {
-    const [results, setResults] = useState<any[]>([]);
+    const [results, setResults] = useState<Respse[]>([]);
 
     return (
         <div>
