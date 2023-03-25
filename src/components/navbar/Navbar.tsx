@@ -18,8 +18,8 @@ export function Navbar() {
                 <div className='logo-search'>
                     <h1>Pulse</h1>
                     <div className='search-bar-container'>
-                        <Searchbar setResults={setResults} results={results} />
-                        <SearchbarResultList results={results} setResults={setResults}/>
+                        <Searchbar setResults={setResults} />
+                        <SearchbarResultList results={results} />
                     </div>
                 </div>
                 <ul>

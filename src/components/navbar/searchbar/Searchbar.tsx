@@ -11,12 +11,11 @@ export interface Respse {
 
 // export interface Respse extends Array<Respse> { }
 
-export interface ISetResults {
-  results: Respse[];
+export interface ISearchbar {
   setResults: Dispatch<SetStateAction<Respse[]>>;
 }
 
-export const Searchbar: FC<ISetResults> = (setResults) => {
+export const Searchbar: FC<ISearchbar> = (setResults) => {
   const [input, setInput] = useState<string>("");
 
   const fetchData = (value: string) => {
@@ -35,6 +34,7 @@ export const Searchbar: FC<ISetResults> = (setResults) => {
     setInput(value);
     fetchData(value);
   }
+
   return (
     <div className='input-wrapper'>
       <FaSearch id='search-icon' size={28} />
