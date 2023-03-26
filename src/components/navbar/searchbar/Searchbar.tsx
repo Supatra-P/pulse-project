@@ -9,8 +9,6 @@ export interface Respse {
   name: string;
 }
 
-// export interface Respse extends Array<Respse> { }
-
 export interface ISearchbar {
   setResults: Dispatch<SetStateAction<Respse[]>>;
 }

@@ -2,7 +2,6 @@
 
 .input-wrapper {
     color: var(--black);
-    /* background-color: var(--white); */
     height: 2rem;
     width: 120%;
     border-radius: 1rem;
@@ -36,19 +35,25 @@ input::placeholder {
     padding: 0 .5rem;
 }
 
-/* ----- search bar result ----- */
+/* ----- search bar result list ----- */
 
 .search-bar-result-list {
     color: var(--txt);
     position: absolute;
     background-color: var(--red);
     width: 300px;
-    /* margin-top: 5rem; */
-    padding: 0 1rem;
     border-radius: 0rem 0rem 1rem 1rem;
     max-height: 300px;
     overflow-y: scroll;
 }
-.search-bar-result-list div {
-    padding: .6rem 0;
+
+/* ----- Search Result ----- */
+
+.search-result {
+    padding: 1rem 1rem;
+    cursor: pointer;
+}
+
+.search-result:hover {
+    background-color: #ffffff2a;
 }
