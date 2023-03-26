@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { useState, Dispatch, SetStateAction, FC } from 'react';
 import './StylesSearch.css';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaRegTimesCircle } from 'react-icons/fa';
 import axios from 'axios';
 
 export interface Respse {
+  video: IVideo;
+}
+
+export interface IVideo {
   id: number;
-  name: string;
+  title: string;
+  videoId: string;
+  channelId: string;
 }
 
 export interface ISearchbar {
@@ -17,12 +23,27 @@ export const Searchbar: FC<ISearchbar> = (setResults) => {
   const [input, setInput] = useState<string>("");
 
   const fetchData = (value: string) => {
-    axios.get("http://jsonplaceholder.typicode.com/users")
+    axios.request(
+      {
+        method: 'GET',
+        url: 'https://youtube-search-and-download.p.rapidapi.com/search',
+        params: {
+          query: value,
+        },
+        headers: {
+          'X-RapidAPI-Key': '273a90d302mshd13ca34f73eb990p119fa3jsn7c55a601997a',
+          'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
+        }
+      }
+    )
       .then((res) => {
         // console.log(res.data);
-        const results: Respse[] = res.data.filter((user: Respse) => {
-          return value && user && user.name && user.name.toLowerCase().includes(value)
+        // console.log(res.data.contents);
+
+        const results = res.data.contents.filter((content: Respse) => {
+          return value && content.video && content.video.title.toLowerCase().includes(value)
         });
+
         // console.log(results);
         setResults.setResults(results);
       })
@@ -35,12 +56,13 @@ export const Searchbar: FC<ISearchbar> = (setResults) => {
 
   return (
     <div className='input-wrapper'>
-      <FaSearch id='search-icon' size={28} />
+      <FaSearch id='search-icon' size={32} />
       <input
-        placeholder='Search...'
+        placeholder='Search'
         value={input}
         onChange={e => handleChange(e.target.value)}
       />
+      <FaRegTimesCircle id='close-icon' onClick={e => {setResults.setResults([]); setInput('');}} />
     </div>
   );
 }

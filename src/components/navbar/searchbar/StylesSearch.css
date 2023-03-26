@@ -14,7 +14,7 @@
 input {
     background-color: transparent;
     border: none;
-    width: 85%;
+    width: 80%;
     height: 100%;
     color: var(--white);
     font-size: 1rem;
@@ -35,6 +35,17 @@ input::placeholder {
     padding: 0 .5rem;
 }
 
+#close-icon {
+    margin: 0 .5rem;
+    cursor: pointer;
+    color: var(--white);
+    opacity: .8;
+}
+
+#close-icon:hover {
+    opacity: 1;
+}
+
 /* ----- search bar result list ----- */
 
 .search-bar-result-list {
@@ -48,6 +59,10 @@ input::placeholder {
 }
 
 /* ----- Search Result ----- */
+
+.search-result-anchor a:hover {
+    color: var(--white);
+}
 
 .search-result {
     padding: 1rem 1rem;
