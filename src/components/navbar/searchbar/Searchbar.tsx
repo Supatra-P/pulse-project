@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { useState, Dispatch, SetStateAction, FC } from 'react';
-import './StylesSearch.css';
-import { FaSearch, FaRegTimesCircle } from 'react-icons/fa';
 import axios from 'axios';
+import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { FaRegTimesCircle, FaSearch } from 'react-icons/fa';
+import './StylesSearch.css';
 
 export interface Respse {
   video: IVideo;

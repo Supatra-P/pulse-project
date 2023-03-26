@@ -2,19 +2,20 @@
 
 .input-wrapper {
     color: var(--black);
-    height: 2rem;
-    width: 120%;
-    border-radius: 1rem;
+    height: 2.5rem;
+    width: 30vw;
+    border-radius: 5rem;
     border: 1px rgba(255, 255, 255, 0.5) solid;
     padding: 0 .25rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 input {
     background-color: transparent;
     border: none;
-    width: 80%;
+    width: 85%;
     height: 100%;
     color: var(--white);
     font-size: 1rem;
@@ -37,7 +38,6 @@ input::placeholder {
 
 #close-icon {
     margin: 0 .5rem;
-    cursor: pointer;
     color: var(--white);
     opacity: .8;
 }
@@ -52,7 +52,7 @@ input::placeholder {
     color: var(--txt);
     position: absolute;
     background-color: var(--red);
-    width: 300px;
+    width: 30vw;
     border-radius: 0rem 0rem 1rem 1rem;
     max-height: 300px;
     overflow-y: scroll;

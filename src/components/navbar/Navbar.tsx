@@ -1,13 +1,7 @@
-import * as React from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import './StylesNav.css';
 import { Respse, Searchbar } from './searchbar/Searchbar';
 import { SearchbarResultList } from './searchbar/SearchbarResultList';
-
-export interface INavbarProps {
-
-}
+import './StylesNav.css';
 
 export function Navbar() {
     const [results, setResults] = useState<Respse[]>([]);
@@ -17,7 +11,7 @@ export function Navbar() {
             <nav>
                 <div className='logo-search'>
                     <h1>Pulse</h1>
-                    <div className='search-bar-container'>
+                    <div>
                         <Searchbar setResults={setResults} />
                         <SearchbarResultList results={results} />
                     </div>

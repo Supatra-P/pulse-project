@@ -21,7 +21,7 @@ nav ul {
 
 nav {
     color: var(--txt);
-    padding: 1rem 8rem;
+    padding: .5rem 8rem;
     background-color: var(--red);
     display: flex;
     justify-content: space-between;
@@ -35,12 +35,10 @@ nav {
 
 .logo-search {
     display: flex;
+    align-items: center;
     gap: 3rem;
 }
 
 .logo-search h1 {
     font-weight: 800;
 }
-
-/* .search-bar-container {
-} */

@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { FC } from 'react';
-import { ISearchbar, Respse } from './Searchbar';
+import { Respse } from './Searchbar';
 import { SearchResult } from './SearchResult';
 import './StylesSearch.css';
 
