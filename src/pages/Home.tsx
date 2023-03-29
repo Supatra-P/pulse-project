@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Compare } from './Compare';
-import { Recommended } from './Recommended';
-import { Trending } from './Trending';
+import { Compare } from './comparePage/Compare';
+import { Recommended } from './recommendedPage/Recommended';
+import { Trending } from './TrendingPage/Trending';
 
 export interface IHomeProps {
 }

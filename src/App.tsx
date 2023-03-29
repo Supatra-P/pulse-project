@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import { Navbar } from './components/navbar/Navbar';
-import { Home } from './components/Home';
-import { Recommended } from './components/Recommended';
-import { Trending } from './components/Trending';
-import { Compare } from './components/Compare';
+import { Home } from './pages/Home';
+import { Trending } from './pages/TrendingPage/Trending';
 
 function App() {
 
