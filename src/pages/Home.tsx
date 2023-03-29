@@ -9,7 +9,6 @@ export interface IHomeProps {
 export function Home(props: IHomeProps) {
   return (
     <div id='home'>
-      home
       <Recommended />
       <Trending />
       <Compare />
