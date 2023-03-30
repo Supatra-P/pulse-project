@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Respse, Searchbar } from './searchbar/Searchbar';
 import { SearchbarResultList } from './searchbar/SearchbarResultList';
 import './StylesNav.css';
@@ -10,7 +11,7 @@ export function Navbar() {
         <div>
             <nav>
                 <div className='logo-search'>
-                    <h1>Pulse</h1>
+                    <Link to="/"><h1>Pulse</h1></Link>
                     <div>
                         <Searchbar setResults={setResults} />
                         <SearchbarResultList results={results} />
