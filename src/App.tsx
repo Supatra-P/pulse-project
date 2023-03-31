@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/trending' element={<Trending />} />
-          <Route path='/compare' element={<Compared />} />
+          <Route path='/compared' element={<Compared />} />
         </Routes>
       </Router>
     </div>
