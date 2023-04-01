@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd'
+import { getInterestList, interestList } from '../../components/addcompare/DataList'
 import './Compare.css'
 
 export interface ICompareProps {
@@ -55,7 +56,9 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
 
 export default function Compare(props: ICompareProps) {
 
-  const [characters, updateCharacters] = useState(finalSpaceCharacters)
+  const [isItems, setIsItems] = useState(false)
+  var getItems:any[] = getInterestList()
+  const [characters, updateCharacters] = useState(getItems)
   const [actionRemove, setActionRemove] = useState(false)
 
   const onDrageEnd = (result: DropResult) => {
@@ -78,11 +81,16 @@ export default function Compare(props: ICompareProps) {
     return characters
   }
 
+  const onGetCompare = () => {
+    setIsItems(!isItems)
+  }
+
   return (
     <div id='compare'>
       <p className='title'>
         Compare Contents
       </p>
+      <button onClick={() => {onGetCompare()}}>start compare~</button>
 
       <DragDropContext onDragEnd={onDrageEnd}>
         <Droppable droppableId="characters" direction="horizontal">
@@ -92,7 +100,7 @@ export default function Compare(props: ICompareProps) {
               {characters.map((item, index) => {
                 return (
 
-                  characters.length <= 3 && <Draggable key={item.id} draggableId={item.id} index={index}>
+                  characters.length <= 3 && <Draggable key={item.videoId} draggableId={item.videoId} index={index}>
                     {(provided, snapshot) => (
                       <section
                         className='characters-list'
@@ -101,9 +109,12 @@ export default function Compare(props: ICompareProps) {
                         {...provided.dragHandleProps}
                         style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                       >
-                        <button onClick={() => { updateCharacters(onRemove(item)) }} style={{ textAlign: 'end', fontSize: '.6rem' }} ><a style={{ color: 'red' }} href={`#${index}`}>remove</a></button>
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                          <button onClick={() => { updateCharacters(onRemove(item)) }} style={{ textAlign: 'end', fontSize: '.6rem' }} ><a style={{ color: 'red' }} href={`#${index}`}>remove</a></button>
+                          <button onClick={() => {console.log(index)}} style={{ textAlign: 'end', fontSize: '.6rem' }} ><a style={{ color: 'blue' }} href={`#${index}`}>link to yt</a></button>
+                        </div>
                         <div className="characters-thumb">
-                          <img src={item.thumb} alt={`${item.title} Thumb`} />
+                          <img src={item.thumbnails[0].url} alt={`${item.title} Thum`} />
                         </div>
                         <h1>
                           {item.title}
@@ -114,8 +125,8 @@ export default function Compare(props: ICompareProps) {
                         <p>
                           {
                             item.description.split(" ").length > 4
-                              ? item.description.substring(0, 250) + "..."
-                              : "..."
+                              ? item.description.substring(0, 250)
+                              : "no description"
                           }
                         </p>
                         <footer>

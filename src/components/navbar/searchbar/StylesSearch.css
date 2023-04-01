@@ -60,8 +60,14 @@ input::placeholder {
 
 /* ----- Search Result ----- */
 
+.search-result-anchor {
+    display: flex;
+    justify-content: space-between;
+}
+
 .search-result-anchor a:hover {
     color: var(--white);
+    width: 100%;
 }
 
 .search-result {
