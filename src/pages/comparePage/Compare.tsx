@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd'
 import './Compare.css'
 
-export interface ICompareProps {}
+export interface ICompareProps {
+
+}
 
 const finalSpaceCharacters = [
   {
@@ -53,7 +55,8 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
 
 export default function Compare(props: ICompareProps) {
 
-  const [characters, updateCharacters] = useState(finalSpaceCharacters);
+  const [characters, updateCharacters] = useState(finalSpaceCharacters)
+  const [actionRemove, setActionRemove] = useState(false)
 
   const onDrageEnd = (result: DropResult) => {
     const { source, destination } = result
@@ -64,6 +67,15 @@ export default function Compare(props: ICompareProps) {
     items.splice(destination.index, 0, newOrder)
 
     updateCharacters(items)
+  }
+
+  const onRemove = (item: any) => {
+    var index = characters.indexOf(item);
+    setActionRemove(!actionRemove)
+    if (index !== -1) {
+      characters.splice(index, 1)
+    }
+    return characters
   }
 
   return (
@@ -89,6 +101,7 @@ export default function Compare(props: ICompareProps) {
                         {...provided.dragHandleProps}
                         style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                       >
+                        <button onClick={() => { updateCharacters(onRemove(item)) }} style={{ textAlign: 'end', fontSize: '.6rem' }} ><a style={{ color: 'red' }} href={`#${index}`}>remove</a></button>
                         <div className="characters-thumb">
                           <img src={item.thumb} alt={`${item.title} Thumb`} />
                         </div>

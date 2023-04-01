@@ -48,6 +48,7 @@
   .characters-thumb {
     overflow: hidden;
     flex-shrink: 0;
+    margin-top: .4rem;
   }
   
   .characters-thumb img {
