@@ -1,47 +1,57 @@
 #compare {
+    margin: 28vh auto;
+    padding: 0 140px;
     color: var(--txt);
-    /* padding: 0 195px; */
-    padding: 200px 0;
-}
-
-.compare-item {
-    max-width: 520px;
-}
-
-.compare-container {
+  }
+  
+  .characters {
+    margin-top: 4rem;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 45px;
-    padding-bottom: 50px;
-}
+  }
+  
+  .characters-list {
+    width: 30%;
+  }
 
-.compare-pic-box {
-    background-color: #D9D9D9;
-    width: 520px;
-    height: 280px;
-    margin-bottom: 20px;
-}
+  /* title */
+  .characters-list h1 {
+    font-size: calc(10px + 1.5vmin);
+    font-weight: 700;
+    margin-top:  1.5rem;
+  }
 
-.compare-description-box {
+  /* channelName */
+  .characters-list h2 {
+    font-size: calc(10px + .5vmin);
+    font-weight: 600;
+    margin-top: .4rem;
+  }
+
+  /* description */
+  .characters-list p {
+    font-size: calc(10px + .3vmin);
+    margin: 1rem auto;
+  }
+  
+  /* publish time and view count */
+  .characters-list footer {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    padding-bottom: 30px;
-}
-
-.compare-description-box p:nth-child(2){
-    font-weight: bold;
-    font-size: 20px;
-    margin: 15px 0;
-}
-
-.compare-description-box p:nth-child(3){
-    font-size: 16px;
-}
-
-.compare-description-box p:nth-child(4){
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 14px;
-}
+    justify-content: space-between;
+    align-items: center;
+    font-size: calc(10px + .3vmin);
+    margin-top: 2rem;
+  }
+  
+  .characters-thumb {
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .characters-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
