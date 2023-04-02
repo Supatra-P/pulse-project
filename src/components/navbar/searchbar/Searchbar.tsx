@@ -30,20 +30,17 @@ export const Searchbar: FC<ISearchbar> = (setResults) => {
           query: value,
         },
         headers: {
-          'X-RapidAPI-Key': '273a90d302mshd13ca34f73eb990p119fa3jsn7c55a601997a',
+          'X-RapidAPI-Key': '796bc36ac2msh3fe41b26982d8f5p1c252ejsn2d98e84f2c0f',
           'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
         }
       }
     )
       .then((res) => {
-        // console.log(res.data);
-        // console.log(res.data.contents);
 
         const results = res.data.contents.filter((content: Respse) => {
           return value && content.video && content.video.title.toLowerCase().includes(value)
         });
-
-        // console.log(results);
+        
         setResults.setResults(results);
       })
   }

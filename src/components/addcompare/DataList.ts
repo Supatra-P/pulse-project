@@ -1,4 +1,4 @@
-export let interestList: any[] = []
+let interestList: any[] = []
 
 export const addReslt = (item: any) => {
   if (interestList.length < 3) {
@@ -7,7 +7,9 @@ export const addReslt = (item: any) => {
 }
 
 export const getInterestList = () => {
-  console.log(`interlist`)
-  console.log(interestList)
   return interestList
+}
+
+export const setInterestList = (newOrderList: any[]) => {
+  interestList = newOrderList
 }
