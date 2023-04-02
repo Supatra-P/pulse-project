@@ -51,7 +51,7 @@ export function Trending(props: ITrendingProps) {
         )
       })}
       <Link to='trendingPage'>
-        <button className="show-btn">Show more</button>
+        <button className="btn-primary">Show more</button>
       </Link>
     </div>
   );

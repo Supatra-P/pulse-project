@@ -63,7 +63,7 @@ export default function Compare() {
         <p className='title'>
           Compare contents
         </p>
-        <button className='getCompareBtn' onClick={() => { onGetCompare() }}>Compare</button>
+        <button className='btn-primary' onClick={() => { onGetCompare() }}>Compare</button>
       </header>
 
       <DragDropContext onDragEnd={onDrageEnd}>

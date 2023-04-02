@@ -35,7 +35,7 @@ export function Recommended(props: IRecommendedProps) {
   return (
     <div id="recommended">
       <p className="title" style={{ marginTop: "30px" }}>
-        Recommended Contents
+        Recommended
       </p>
       <div className="recommend-container">
         {recommendedData.map((value: any, idx: any) => {
