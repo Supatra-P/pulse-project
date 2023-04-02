@@ -51,7 +51,7 @@ export function Recommended(props: IRecommendedProps) {
                       <p style={{ fontWeight: "bold" }}># {idx+1} {value.video.title}</p>
                       <p>{value.video.channelName}</p>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "5px", width: '100%' }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                       <FaEye id="eye-icon" />
                       <p>{value.video.viewCountText}</p>
                     </div>
