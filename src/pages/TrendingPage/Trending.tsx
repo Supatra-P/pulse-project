@@ -54,7 +54,7 @@ export function Trending(props: ITrendingProps) {
       })}
       <Link to='trendingPage'>
         <div style={{display: "flex",justifyContent: "center", marginTop: "2rem"}}>
-          <button className="btn-primary" style={{justifyContent: "center"}}>Show more!</button>
+          <button className="btn-primary" style={{justifyContent: "center"}}>Show more</button>
         </div>
       </Link>
     </div>

@@ -30,7 +30,7 @@ const TrendingPage = () => {
   return (
     <div id="trending">
       <Link to='/'>
-        <button className="btn-primary">&lt;Go back</button>
+        <button className="btn-primary">Go back</button>
       </Link>
       <p className="title" style={{ marginTop: "60px" , textAlign: "center", fontSize: "38px"}}>
         Trending
