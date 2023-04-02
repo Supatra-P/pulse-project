@@ -47,11 +47,11 @@ export function Recommended(props: IRecommendedProps) {
                     <img src={value.video.thumbnails[0].url} alt="pic-trending" />
                   </div>
                   <div className="recommend-description-box">
-                    <div>
+                    <div style={{maxWidth: "250px"}}>
                       <p style={{ fontWeight: "bold" }}># {idx+1} {value.video.title}</p>
                       <p>{value.video.channelName}</p>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "5px", width: '100%' }}>
+                    <div className="view-box">
                       <FaEye id="eye-icon" />
                       <p>{value.video.viewCountText}</p>
                     </div>

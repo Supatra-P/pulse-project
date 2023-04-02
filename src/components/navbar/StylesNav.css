@@ -6,7 +6,9 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--txtHover);
+    /* font-size: 1.05rem; */
+    font-weight: 600;
+    /* color: var(--txtHover); */
 }
 
 nav a.action {
