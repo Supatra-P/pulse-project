@@ -17,7 +17,7 @@ export const SearchResult: FC<ISearchResult> = (result) => {
           </p>
         </div>
       </a>
-      <button onClick={() => addReslt(result.result.video)}>add</button>
+      <button onClick={() => addReslt(result.result.video)}>+</button>
     </div>
   )
 }

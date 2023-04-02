@@ -3,6 +3,29 @@
     padding: 0 140px;
     color: var(--txt);
   }
+
+  #compare header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  .getCompareBtn {
+    padding: 1rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    border-radius: 3rem;
+    border: solid 1px var(--white);
+    background-color: var(--black);
+    cursor: pointer;
+    transition: all ease 0.3s;
+  }
+
+  .getCompareBtn:hover {
+    color: var(--black);
+    background-color: var(--red);
+  }
   
   .characters {
     margin-top: 4rem;
@@ -56,3 +79,38 @@
     width: 100%;
     height: auto;
   }
+
+  .btn-icon {
+    align-items: end;
+    font-size: 1.5rem;
+    /* padding: 0 1rem 0 0;
+    color: var(--black); */
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all .1s ease;
+  }
+
+  .remove-btn {
+    font-size: 1.5rem;
+    color: var(--black);
+    padding: 0 1rem 0 0;
+  }
+
+  .remove-btn:hover {
+    color: var(--red);
+  }
+
+  .link-vdo-btn {
+    font-size: 1.4rem;
+    color: var(--black);
+  }
+  
+  .link-vdo-btn a {
+    color: var(--black);
+  }
+
+  .link-vdo-btn a:hover {
+    color: var(--red);
+  }
+

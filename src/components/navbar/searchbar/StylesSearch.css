@@ -64,6 +64,7 @@ input::placeholder {
 .search-result-anchor {
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
 }
 
 .search-result-anchor a:hover {
@@ -81,5 +82,19 @@ input::placeholder {
 }
 
 .search-result-anchor button {
-    
+    font-size: 2rem;
+    font-weight: 200;
+    color: var(--white);
+    background-color: var(--red);
+    border: none;
+    max-width: 2.5rem;
+    width: 100%;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+
+.search-result-anchor button:hover {
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: white;
 }
