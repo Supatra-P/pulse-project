@@ -4,6 +4,7 @@ import { Navbar } from './components/navbar/Navbar';
 import Compare from './pages/comparePage/Compare';
 import { Home } from './pages/Home';
 import { Trending } from './pages/trendingPage/Trending';
+import TrendingPage from './pages/trendingPage/TrendingPage';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/trending' element={<Trending />} />
+          <Route path='/trendingPage' element={<TrendingPage />} />
           <Route path='/compare' element={<Compare />} />
         </Routes>
       </Router>

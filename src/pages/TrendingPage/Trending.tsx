@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./Trending.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export interface ITrendingProps {
 }
@@ -13,8 +14,7 @@ export function Trending(props: ITrendingProps) {
         `https://youtube-search-and-download.p.rapidapi.com/trending`,
         {
           headers: {
-            "X-RapidAPI-Key":
-              "41b95cb566msh132a5b49a117a8dp1b0d9ajsn57afe773212c",
+            'X-RapidAPI-Key': '273a90d302mshd13ca34f73eb990p119fa3jsn7c55a601997a',
             "X-RapidAPI-Host": "youtube-search-and-download.p.rapidapi.com",
           },
           params: { id: "UCE_M8A5yxnLfW0KghEeajjw" },
@@ -27,11 +27,12 @@ export function Trending(props: ITrendingProps) {
     }
   };
 
+  React.useEffect(() => {
+    fetchQuotes();
+  }, []);
+
   return (
     <div id="trending">
-      <button style={{ marginTop: "100px" }} onClick={fetchQuotes}>
-        Click ME!
-      </button>
       <p className="title" style={{ marginTop: "60px" }}>
         Trending
       </p>
@@ -43,18 +44,15 @@ export function Trending(props: ITrendingProps) {
               <div className="description-box">
                 <p className="title"># {idx + 1} {value.video.title}</p>
                 <p>{value.video.channelName}</p>
-                <p>
-                  Description . . Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua.
-                </p>
                 <p>{value.video.viewCountText}</p>
               </div>
             </div>
             : null
         )
       })}
-
+      <Link to='trendingPage'>
+        <button className="show-btn">Show more</button>
+      </Link>
     </div>
   );
 }

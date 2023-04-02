@@ -27,11 +27,13 @@ export function Recommended(props: IRecommendedProps) {
     }
   };
 
+  React.useEffect(() => {
+    fetchQuotes();
+  }, []);
+
+
   return (
     <div id="recommended">
-      <button style={{ marginTop: "100px" }} onClick={fetchQuotes}>
-        Click ME!
-      </button>
       <p className="title" style={{ marginTop: "30px" }}>
         Recommended Contents
       </p>
@@ -39,6 +41,7 @@ export function Recommended(props: IRecommendedProps) {
         {recommendedData.map((value: any, idx: any) => {
           return (
               (idx < 6) ? 
+              <a href={`https://www.youtube.com/watch?v=${value.video.videoId}`} target='_blank' rel='noreferrer'>
                 <div className="recommend-item" key={idx}>
                   <div className="recommend-pic-box">
                     <img src={value.video.thumbnails[0].url} alt="pic-trending" />
@@ -53,7 +56,7 @@ export function Recommended(props: IRecommendedProps) {
                       <p>{value.video.viewCountText}</p>
                     </div>
                   </div>
-                </div>
+                </div></a>
             : null);
           }).reverse()}
       </div>

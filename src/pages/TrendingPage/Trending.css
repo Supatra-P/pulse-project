@@ -43,3 +43,14 @@
     left: 0;
     font-size: 14px;
 }
+
+.show-btn {
+    background-color: #52B6FF;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
