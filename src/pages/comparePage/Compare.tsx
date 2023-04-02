@@ -2,11 +2,13 @@ import { useState } from 'react'
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd'
 import { getInterestList, setInterestList } from '../../components/addcompare/DataList'
 import './Compare.css'
+import { IoMdRemove } from 'react-icons/io'
+import { HiOutlineExternalLink } from 'react-icons/hi'
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
   padding: 12,
   margin: `0 10px 15px 10px`,
-  background: isDragging ? "#FFD3D3" : "white",
+  background: isDragging ? "var(--red)" : "white",
   color: isDragging ? 'white' : 'black',
   border: `1px solid black`,
   fontSize: `20px`,
@@ -17,7 +19,7 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
 export default function Compare() {
 
   const [isItems, setIsItems] = useState(false)
-  var getItems:any[] = getInterestList()
+  var getItems: any[] = getInterestList()
   const [items, setItems] = useState(getItems)
   setInterestList(items)
   const [characters, updateCharacters] = useState(items)
@@ -40,10 +42,10 @@ export default function Compare() {
 
     onGetCompare()
     setActionRemove(!actionRemove)
-    if (index !== -1) { 
+    if (index !== -1) {
       characters.splice(index, 1)
     }
-    if (characters.length == 0){
+    if (characters.length == 0) {
       items.splice(0, getItems.length)
     }
     setItems(characters)
@@ -57,10 +59,12 @@ export default function Compare() {
 
   return (
     <div id='compare'>
-      <p className='title'>
-        Compare Contents
-      </p>
-      <button onClick={() => {onGetCompare()}}>start compare~</button>
+      <header>
+        <p className='title'>
+          Compare contents
+        </p>
+        <button className='getCompareBtn' onClick={() => { onGetCompare() }}>Compare</button>
+      </header>
 
       <DragDropContext onDragEnd={onDrageEnd}>
         <Droppable droppableId="characters" direction="horizontal">
@@ -79,9 +83,9 @@ export default function Compare() {
                         {...provided.dragHandleProps}
                         style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                       >
-                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                          <button onClick={() => { updateCharacters(onRemove(item))}} style={{ textAlign: 'end', fontSize: '.6rem' }} ><a style={{ color: 'red' }} href={`#${index}`}>remove</a></button>
-                          <button onClick={() => {console.log(index)}} style={{ textAlign: 'end', fontSize: '.6rem' }} ><a style={{ color: 'blue' }} href={`#${index}`}>link to yt</a></button>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <button onClick={() => { updateCharacters(onRemove(item)) }} className='btn-icon remove-btn' ><IoMdRemove /></button>
+                          <button onClick={() => { console.log(index) }} className='btn-icon link-vdo-btn'><a href={`https://www.youtube.com/watch?v=${item.videoId}`} target='_blank' rel='noreferrer'><HiOutlineExternalLink /></a></button>
                         </div>
                         <div className="characters-thumb">
                           <img src={item.thumbnails[0].url} alt={`${item.title} Thum`} />
