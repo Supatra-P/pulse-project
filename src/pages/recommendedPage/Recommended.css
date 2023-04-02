@@ -6,20 +6,18 @@
 
 .recommend-container {
     display: grid;
-    justify-content: center;
+    justify-content: space-between;
     grid-template-columns: repeat(3, auto);
-    gap: 40px;
+    row-gap: 2vw;
     margin: 20px 0;
 }
 
 .recommend-item {
     position: relative;
-
 }
 
 .recommend-pic-box {
-    width: 440px;
-    height: 280px;
+    width: 26vw;
 }
 
 .recommend-description-box {
@@ -27,15 +25,15 @@
     display: none;
     justify-content: space-between;
     align-items: flex-end;
-    width: 440px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
     bottom: 0;
     padding: 10px;
 }
 
 .recommend-pic-box:hover + .recommend-description-box {
     display: flex;
-    background-image: linear-gradient(#ffffff32, #303030); 
+    background-image: linear-gradient(#ffffff32, #000000); 
 }
 
  .recommend-container a {
