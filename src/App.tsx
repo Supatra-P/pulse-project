@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Footer } from './components/footer/Footer';
 import { Navbar } from './components/navbar/Navbar';
 import Compare from './pages/comparePage/Compare';
 import { Home } from './pages/Home';
@@ -18,6 +19,7 @@ function App() {
           <Route path='/trendingPage' element={<TrendingPage />} />
           <Route path='/compare' element={<Compare />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   )
