@@ -36,39 +36,26 @@ export function Recommended(props: IRecommendedProps) {
         Recommended Contents
       </p>
       <div className="recommend-container">
-        <div className="recommend-item">
-          <div className="recommend-pic-box"></div>
-          <div className="recommend-description-box">
-            <div>
-              <p style={{ fontWeight: "bold" }}>Title Name</p>
-              <p>Channel Name</p>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-              <FaEye id="eye-icon" />
-              <p>5M</p>
-            </div>
-          </div>
-        </div>
         {recommendedData.map((value: any, idx: any) => {
           return (
-            <div className="recommend-item" key={idx}>
-              {/* <img src={value.video.thumbnails[0].url} alt="pic-trending" /> */}
-              <div className="recommend-pic-box"></div>
-              <div className="recommend-description-box">
-                <div>
-                  <p style={{ fontWeight: "bold" }}># {idx+1} {value.video.title}</p>
-                  <p>{value.video.channelName}</p>
+              (idx < 6) ? 
+                <div className="recommend-item" key={idx}>
+                  <div className="recommend-pic-box">
+                    <img src={value.video.thumbnails[0].url} alt="pic-trending" />
+                  </div>
+                  <div className="recommend-description-box">
+                    <div>
+                      <p style={{ fontWeight: "bold" }}># {idx+1} {value.video.title}</p>
+                      <p>{value.video.channelName}</p>
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                      <FaEye id="eye-icon" />
+                      <p>{value.video.viewCountText}</p>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  style={{ display: "flex", alignItems: "center", gap: "5px" }}
-                >
-                  <FaEye id="eye-icon" />
-                  <p>{value.video.viewCountText}</p>
-                </div>
-              </div>
-            </div>
-          );
-        }).reverse()}
+            : null);
+          }).reverse()}
       </div>
     </div>
   );
