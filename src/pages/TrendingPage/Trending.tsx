@@ -39,6 +39,7 @@ export function Trending(props: ITrendingProps) {
       {trendingData.map((value: any, idx: any) => {
         return (
           idx < 3 ?
+          <a href={`https://www.youtube.com/watch?v=${value.video.videoId}`} target='_blank' rel='noreferrer'>
             <div className="trend-item" key={idx}>
               <img src={value.video.thumbnails[0].url} alt="pic-trending" />
               <div className="description-box">
@@ -47,11 +48,14 @@ export function Trending(props: ITrendingProps) {
                 <p>{value.video.viewCountText}</p>
               </div>
             </div>
+          </a>
             : null
         )
       })}
       <Link to='trendingPage'>
-        <button className="btn-primary">Show more</button>
+        <div style={{display: "flex",justifyContent: "center", marginTop: "12px"}}>
+          <button className="btn-primary" style={{justifyContent: "center"}}>Show more!</button>
+        </div>
       </Link>
     </div>
   );

@@ -30,21 +30,23 @@ const TrendingPage = () => {
   return (
     <div id="trending">
       <Link to='/'>
-        <button className="btn-primary">Go back</button>
+        <button className="btn-primary">&lt;Go back</button>
       </Link>
       <p className="title" style={{ marginTop: "60px" , textAlign: "center", fontSize: "38px"}}>
         Trending
       </p>
       {trendingData.map((value: any, idx: any) => {
         return (
-            <div className="trend-item" key={idx}>
-              <img src={value.video.thumbnails[0].url} alt="pic-trending" />
-              <div className="description-box">
-                <p className="title"># {idx + 1} {value.video.title}</p>
-                <p>{value.video.channelName}</p>
-                <p>{value.video.viewCountText}</p>
-              </div>
+          <a href={`https://www.youtube.com/watch?v=${value.video.videoId}`} target='_blank' rel='noreferrer'>
+          <div className="trend-item" key={idx}>
+            <img src={value.video.thumbnails[0].url} alt="pic-trending" />
+            <div className="description-box">
+              <p className="title"># {idx + 1} {value.video.title}</p>
+              <p>{value.video.channelName}</p>
+              <p>{value.video.viewCountText}</p>
             </div>
+          </div>
+        </a>
         )
       })}
     </div>

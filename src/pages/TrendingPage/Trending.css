@@ -1,7 +1,7 @@
 #trending {
     padding: 0 140px;
     color: white;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 .trend-item{
@@ -42,4 +42,9 @@
     bottom: 0;
     left: 0;
     font-size: 14px;
+}
+
+#trending a {
+    text-decoration: none;
+    color: white;
 }
