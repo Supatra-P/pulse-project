@@ -36,19 +36,23 @@ export function Trending(props: ITrendingProps) {
         Trending
       </p>
       {trendingData.map((value: any, idx: any) => {
-        return <div className="trend-item" key={idx}>
-            <img src={value.video.thumbnails[0].url} alt="pic-trending" />
-            <div className="description-box">
-              <p className="title"># {idx+1} {value.video.title}</p>
-              <p>{value.video.channelName}</p>
-              <p>
-                Description . . Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-              </p>
-              <p>{value.video.viewCountText}</p>
+        return (
+          idx < 3 ?
+            <div className="trend-item" key={idx}>
+              <img src={value.video.thumbnails[0].url} alt="pic-trending" />
+              <div className="description-box">
+                <p className="title"># {idx + 1} {value.video.title}</p>
+                <p>{value.video.channelName}</p>
+                <p>
+                  Description . . Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.
+                </p>
+                <p>{value.video.viewCountText}</p>
+              </div>
             </div>
-          </div>
+            : null
+        )
       })}
 
     </div>

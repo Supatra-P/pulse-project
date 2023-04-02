@@ -40,6 +40,7 @@ input::placeholder {
     margin: 0 .5rem;
     color: var(--white);
     opacity: .8;
+    cursor: pointer;
 }
 
 #close-icon:hover {
@@ -77,4 +78,8 @@ input::placeholder {
 
 .search-result:hover {
     background-color: #ffffff2a;
+}
+
+.search-result-anchor button {
+    
 }
